@@ -1,0 +1,63 @@
+/* app css stylesheet */
+
+.container {
+    padding: 1em;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+div#tube {
+    height: 400px;
+    width: 400px;
+    background-image: url("tube.png");
+    background-repeat: none;
+    background-size: 400px;
+    padding: 1em;
+}
+
+div#tubeBuffer {
+    height: 250px;
+    width:400px;
+}
+
+div#gameText {
+    height: 2em;
+    width: 30em;
+}
+
+div#correctWord {
+    width: 400px;
+    text-align: center;
+    margin-bottom: -3em;
+    margin-top: -1em;
+}
+
+div#tubeWords {
+    margin-left:20%;
+}
+
+div#tube button {
+    margin: 1em;
+}

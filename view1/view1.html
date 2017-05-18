@@ -1,0 +1,31 @@
+<div class="container">
+<div class="row">
+	<div class="col-md-6">
+		<h2>Mix the ingredients up to see if you can create a new word!</h2>
+		<div id="gameText">{{ gameBoxText }}</div>
+		<div id="correctWord"><h2>{{ resultWord }}</h2></div>
+		<div id="tube">
+			<div id="tubeBuffer"></div>
+			<div id="tubeWords">
+				<button ng-repeat="chosenBlank in chosenBlanks track by $index">{{ chosenBlank }}</button> 
+
+				<button ng-repeat="chosenWord in chosenWords track by $index">{{ chosenWord }}</button> 
+			</div>
+		</div>
+
+		<button ng-repeat="subword in subwords"
+			ng-click="clickSub(subword)">{{ subword }}</button> 
+
+		<hr>
+
+		<button id="mixBtn" ng-disabled="chosenBlanks.length > 0"
+			class="btn btn-primary"
+			ng-click="clickMix()">Mix!</button>
+
+	</div>
+	<div class="col-md-4">
+		<button ng-show="showNext" ng-click="next()">Next</button>
+		<div ng-show="showDone">That's all the mixtures I have for today!</div>
+	</div>
+</div>
+</div>
