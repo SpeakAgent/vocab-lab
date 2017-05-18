@@ -71,7 +71,8 @@ angular.module('myApp.view1', ['ngRoute'])
     if (c == $scope.correctSubs.length) {
         $scope.resultWord = $scope.resultSolution;
         $scope.gameBoxText = "Awesome! That combination works!"
-        if ($scope.gameIndex != $scope.gameSets.length) {
+        console.log($scope.gameIndex, $scope.gameSets.length)
+        if ($scope.gameIndex != $scope.gameSets.length-1) {
             $scope.showNext = true;
         } else {
             $scope.showDone = true;

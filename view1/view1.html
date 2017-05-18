@@ -3,7 +3,10 @@
 	<div class="col-md-6">
 		<h2>Mix the ingredients up to see if you can create a new word!</h2>
 		<div id="gameText">{{ gameBoxText }}</div>
-		<div id="correctWord"><h2>{{ resultWord }}</h2></div>
+		<div id="correctWord">
+			<div id="correctSpacer"></div>
+			<h2>{{ resultWord }}</h2>
+		</div>
 		<div id="tube">
 			<div id="tubeBuffer"></div>
 			<div id="tubeWords">
@@ -14,18 +17,16 @@
 		</div>
 
 		<button ng-repeat="subword in subwords"
-			ng-click="clickSub(subword)">{{ subword }}</button> 
+			ng-click="clickSub(subword)" 
+			class="subword">{{ subword }}</button> 
 
-		<hr>
-
+		<br>
 		<button id="mixBtn" ng-disabled="chosenBlanks.length > 0"
 			class="btn btn-primary"
 			ng-click="clickMix()">Mix!</button>
-
+		<button ng-show="showNext" ng-click="next()" id="nextBtn">Next</button>
+		<p ng-show="showDone">That's all the mixtures I have for today!</p>
 	</div>
-	<div class="col-md-4">
-		<button ng-show="showNext" ng-click="next()">Next</button>
-		<div ng-show="showDone">That's all the mixtures I have for today!</div>
-	</div>
+		
 </div>
 </div>
