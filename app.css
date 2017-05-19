@@ -78,6 +78,10 @@ button.selected {
     cursor: not-allowed;
 }
 
+div#subwordBlock {
+    width: 400px;
+}
+
 button#mixBtn, button#nextBtn {
     font-size: 2em;
     background-color: #1693A5;
