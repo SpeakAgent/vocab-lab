@@ -94,6 +94,7 @@ button#mixBtn, button#nextBtn {
     border-radius: 10px;
     background-position: 0;
     background-image: none;
+    margin-top: .5em;
 }
 
 button#mixBtn {
