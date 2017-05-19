@@ -17,6 +17,19 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.showNext = false;
   $scope.showDone = false;
 
+  function shuffle (array) {
+      var i = 0
+        , j = 0
+        , temp = null
+
+      for (i = array.length - 1; i > 0; i -= 1) {
+        j = Math.floor(Math.random() * (i + 1))
+        temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+      }
+  }
+
   $scope.gameSets = [
     {
         subwords: ['cause', 'happen', 'find', 'see', 'something'],
@@ -34,7 +47,11 @@ angular.module('myApp.view1', ['ngRoute'])
     }
   ]
 
-  $scope.subwords = $scope.gameSets[$scope.gameIndex].subwords.slice();
+  // We don't want to reshuffle every time. Madness!
+  $scope.subwordsSaved = $scope.gameSets[$scope.gameIndex].subwords.slice();
+  shuffle($scope.subwordsSaved);
+  $scope.subwords = $scope.subwordsSaved.slice();
+
   $scope.correctSubs = $scope.gameSets[$scope.gameIndex].correctSubs;
   $scope.resultSolution = $scope.gameSets[$scope.gameIndex].resultSolution;
 
@@ -81,14 +98,16 @@ angular.module('myApp.view1', ['ngRoute'])
     } else {
         $scope.chosenBlanks = ['______', '_______'];
         $scope.chosenWords = [];
-        $scope.subwords = $scope.gameSets[$scope.gameIndex].subwords.slice();
+        $scope.subwords = $scope.subwordsSaved.slice();
         $scope.gameBoxText = "Those don't work! Try another combination."
     }
   }
 
   $scope.next = function() {
     $scope.gameIndex += 1;
-    $scope.subwords = $scope.gameSets[$scope.gameIndex].subwords.slice();
+    $scope.subwordsSaved = $scope.gameSets[$scope.gameIndex].subwords.slice();
+    shuffle($scope.subwordsSaved);
+    $scope.subwords = $scope.subwordsSaved.slice();
     $scope.correctSubs = $scope.gameSets[$scope.gameIndex].correctSubs;
     $scope.resultSolution = $scope.gameSets[$scope.gameIndex].resultSolution;
     $scope.chosenBlanks = ['______', '_______'];
