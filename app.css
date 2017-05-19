@@ -91,6 +91,10 @@ button#mixBtn, button#nextBtn {
     background-position: 0;
 }
 
+button#mixBtn {
+    margin-top: .5em;
+}
+
 button#mixBtn:hover, button#nextBtn:hover {
     background-color: #00CDAC;
     background-image: none;
