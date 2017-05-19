@@ -32,19 +32,55 @@ angular.module('myApp.view1', ['ngRoute'])
 
   $scope.gameSets = [
     {
-        subwords: ['cause', 'happen', 'find', 'see', 'something'],
-        correctSubs: ['cause', 'happen'],
-        resultSolution: 'consequence'},
-    {
-        subwords: ['find', 'new', 'cause', 'one', 'many'],
-        correctSubs: ['find', 'new'],
-        resultSolution: 'discover',
+        subwords: ['cross', 'walk', 'run', 'face', 'turn'],
+        correctSubs: ['cross', 'walk'],
+        resultSolution: 'crosswalk'
     },
     {
-        subwords: ['believe', 'something', 'find', 'gather', 'work'],
-        correctSubs: ['believe', 'something'],
-        resultSolution: 'opinion',
-    }
+        subwords: ['high', 'way', 'car', 'low', 'cross'],
+        correctSubs: ['high', 'way'],
+        resultSolution: 'highway'
+    },
+    {
+        subwords: ['book', 'shelf', 'page', 'wall', 'read'],
+        correctSubs: ['book', 'shelf'],
+        resultSolution: 'bookshelf'
+    },
+    {
+        subwords: ['hand', 'shake', 'stir', 'foot', 'nose'],
+        correctSubs: ['hand', 'shake'],
+        resultSolution: 'handshake'
+    },
+    {
+        subwords: ['land', 'slide', 'slip', 'dirt', 'air'],
+        correctSubs: ['land', 'slide'],
+        resultSolution: 'landslide'
+    },
+    {
+        subwords: ['find', 'new', 'old', 'look', 'same'],
+        correctSubs: ['find', 'new'],
+        resultSolution: 'discover'
+    },
+    {
+        subwords: ['watch', 'carefully', 'speak', 'time', 'see'],
+        correctSubs: ['watch', 'carefully'],
+        resultSolution: 'observe'
+    },
+    {
+        subwords: ['do', 'together', 'alone', 'fix', 'go'],
+        correctSubs: ['do', 'together'],
+        resultSolution: 'participate'
+    },
+    {
+        subwords: ['arrange', 'order', 'random', 'quickly', 'stop'],
+        correctSubs: ['arrange', 'order'],
+        resultSolution: 'organize'
+    },
+    {
+        subwords: ['action', 'result', 'watch', 'cause', 'final'],
+        correctSubs: ['action', 'result'],
+        resultSolution: 'consequence'
+    },
   ]
 
   // We don't want to reshuffle every time. Madness!

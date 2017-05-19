@@ -21,10 +21,11 @@
 				ng-click="clickSub(subword)" 
 				class="subword"
 				ng-class="{selected: chosenWords.indexOf(subword) > -1}">{{ subword }}</button> 
-				<button id="mixBtn" 
+			
+			<p><button id="mixBtn" 
 			ng-disabled="chosenBlanks.length > 0 || showNext || showDone"
 			class="btn btn-primary"
-			ng-click="clickMix()">Mix!</button>
+			ng-click="clickMix()">Mix!</button></p>
 		</div>
 		<br>
 		
