@@ -1,8 +1,7 @@
 <div class="container">
 <div class="row">
-	<div class="col-md-6">
-		<h2>Mix the ingredients up to see if you can create a new word!</h2>
-		<div id="gameText">{{ gameBoxText }}</div>
+	<div class="col-md-5 col-md-offset-1">
+		
 		<div id="correctWord">
 			<div id="correctSpacer"></div>
 			<h2>{{ resultWord }}</h2>
@@ -10,9 +9,11 @@
 		<div id="tube">
 			<div id="tubeBuffer"></div>
 			<div id="tubeWords">
-				<button ng-repeat="chosenBlank in chosenBlanks track by $index">{{ chosenBlank }}</button> 
+				<button ng-repeat="chosenBlank in chosenBlanks track by $index"
+				class="subword">{{ chosenBlank }}</button> 
 
-				<button ng-repeat="chosenWord in chosenWords track by $index">{{ chosenWord }}</button> 
+				<button ng-repeat="chosenWord in chosenWords track by $index"
+				class="subword">{{ chosenWord }}</button> 
 			</div>
 		</div>
 
@@ -21,11 +22,21 @@
 			class="subword">{{ subword }}</button> 
 
 		<br>
-		<button id="mixBtn" ng-disabled="chosenBlanks.length > 0"
+		<button id="mixBtn" 
+			ng-disabled="chosenBlanks.length > 0 || showNext || showDone"
 			class="btn btn-primary"
 			ng-click="clickMix()">Mix!</button>
+	</div>
+	<div class="col-md-5">
+		<h1>Mix the ingredients up to see if you can create a new word!</h1>
+		<h3 id="gameText">{{ gameBoxText }}</h3>
+		<h3
+			id = "equation" 
+			ng-show="showNext || showDone">
+			{{ chosenWords[0] }} + {{ chosenWords[1] }} = {{ resultWord }}
+		</h3>
 		<button ng-show="showNext" ng-click="next()" id="nextBtn">Next</button>
-		<p ng-show="showDone">That's all the mixtures I have for today!</p>
+		<h3 ng-show="showDone">That's all the mixtures I have for today!</h3>
 	</div>
 		
 </div>

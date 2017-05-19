@@ -69,6 +69,10 @@ div#tubeWords {
     margin-left:20%;
 }
 
+button.subword {
+    font-weight: bold;
+}
+
 button#mixBtn, button#nextBtn {
     font-size: 2em;
     background-color: #1693A5;
@@ -94,4 +98,8 @@ div#tube button {
     background-color: #2DDBED;
     border: none;
     border-radius: 10px;
+}
+
+h3#equation {
+    color: #00CDAC;
 }

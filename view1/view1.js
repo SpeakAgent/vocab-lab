@@ -96,6 +96,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.mixReady = false;
     $scope.showNext = false;
     $scope.resultWord = "";
+    $scope.gameBoxText = "";
 
   }
 
