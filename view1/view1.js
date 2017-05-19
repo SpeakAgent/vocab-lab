@@ -55,15 +55,29 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.correctSubs = $scope.gameSets[$scope.gameIndex].correctSubs;
   $scope.resultSolution = $scope.gameSets[$scope.gameIndex].resultSolution;
 
+  $scope.isSelected = function (word) {
+    console.log("Checking word", word, $scope.chosenWords.indexOf(word))
+    if ($scope.chosenWords.indexOf(word) > -1) {
+        console.log("returning false")
+        return false
+    } else {
+        console.log("returning true")
+        return true
+    }
+  }
 
   $scope.clickSub = function(word) {
+    if ($scope.chosenWords.indexOf(word) > -1) {
+        console.log(word, $scope.chosenWords);
+        return
+    }
     if ($scope.chosenBlanks.length == 0) {
         // Error message
     } else {
         $scope.chosenBlanks.pop();
         $scope.chosenWords.push(word);
-        var i = $scope.subwords.indexOf(word);
-        $scope.subwords.splice(i, 1);
+        // var i = $scope.subwords.indexOf(word);
+        // $scope.subwords.splice(i, 1);
         if ($scope.chosenBlanks.length == 0) {
             $scope.mixReady = true;   
         }

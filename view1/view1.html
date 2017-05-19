@@ -19,7 +19,8 @@
 
 		<button ng-repeat="subword in subwords"
 			ng-click="clickSub(subword)" 
-			class="subword">{{ subword }}</button> 
+			class="subword"
+			ng-class="{selected: chosenWords.indexOf(subword) > -1}">{{ subword }}</button> 
 
 		<br>
 		<button id="mixBtn" 
