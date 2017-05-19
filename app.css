@@ -28,6 +28,10 @@
   padding-right: 0.3em;
 }
 
+h1 {
+    font-weight: bold !important;
+}
+
 div#tube {
     height: 400px;
     width: 400px;
@@ -89,6 +93,7 @@ button#mixBtn, button#nextBtn {
     border: none;
     border-radius: 10px;
     background-position: 0;
+    background-image: none;
 }
 
 button#mixBtn {
@@ -110,6 +115,7 @@ button.subword {
     border: none;
     border-radius: 10px;
     padding: .5em;
+    font-size: 1.1em;
 }
 
 div#tube button {
@@ -120,5 +126,5 @@ div#tube button {
 }
 
 h3#equation {
-    color: #00CDAC;
+    color: #00BD9C;
 }
