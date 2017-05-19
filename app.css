@@ -75,6 +75,7 @@ button.subword {
 
 button.selected {
     background-color: lightgrey !important;
+    cursor: not-allowed;
 }
 
 button#mixBtn, button#nextBtn {
@@ -83,6 +84,12 @@ button#mixBtn, button#nextBtn {
     color: #fff;
     border: none;
     border-radius: 10px;
+    background-position: 0;
+}
+
+button#mixBtn:hover, button#nextBtn:hover {
+    background-color: #00CDAC;
+    background-image: none;
 }
 
 button#mixBtn:disabled {
